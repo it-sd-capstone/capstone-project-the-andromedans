@@ -1,0 +1,42 @@
+################
+--Manual Tests--
+################
+
+#--Test 1: Test scene dependencies--
+
+## Test Steps
+1. Open Unity Hub.
+2. Navigate to the andromedanGame directory.
+3. Open the project.
+4. Open SampleScene.unity
+
+## Expected Results:
+* The scene loads with two gameObjects, a camera and a light source.
+
+
+#--Test 2: Test Unity's editor--
+
+## Test Steps
+1. Open Unity Hub.
+2. Navigate to the andromedanGame directory.
+3. Open the project.
+4. Navigate to the "Console" window.
+
+## Expected Results
+* The console displays no errors.
+
+
+#--Test 3: Test script compiler--
+
+## Test Steps
+1. Open Unity Hub.
+2. Navigate to the andromedanGame directory.
+3. Open the project.
+4. Create a new script file named "test.cs"
+5. Type "Debug.log("Hello World")" in the start() method.
+6. Save test.cs
+7. Attach test.cs to the camera gameObject.
+8. Click the "Play" button.
+
+## Expected results
+* The console displays "Hello World"
