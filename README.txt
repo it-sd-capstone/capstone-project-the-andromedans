@@ -36,7 +36,7 @@ This project requires Unity. To install:
 ###########
 --Testing--
 ###########
-
+See ./manualTests.txt for more information.
 
 #########
 --Usage--
