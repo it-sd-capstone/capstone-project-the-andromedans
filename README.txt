@@ -33,15 +33,17 @@ This project requires Unity. To install:
 10. Click "Continue"
 
 To open Andromedan:
-1. On the left vertical toolbar, click on "Projects"
+1. Open Unity Hub
 
-2. From the "Add" dropdown, select "Add project from disk"
+2. On the left vertical toolbar, click on "Projects"
 
-3. Navigate to the directory containing Andromedan
+3. From the "Add" dropdown, select "Add project from disk"
 
-4. Click "Open"
+4. Navigate to the directory containing Andromedan
 
-5. Select Andromedan from Unity's list of projects
+5. Click "Open"
+
+6. Select Andromedan from Unity's list of projects
 
 
 ###########
