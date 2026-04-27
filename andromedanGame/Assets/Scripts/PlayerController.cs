@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 8f;
+    public float focusMult = 0.5f;
 
     private PlayerControls controls;
     private Vector2 moveInput;
+    private bool isFocus;
 
     private void Awake()
     {
@@ -15,6 +17,9 @@ public class PlayerController : MonoBehaviour
 
         controls.Gameplay.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         controls.Gameplay.Move.canceled += ctx => moveInput = Vector2.zero;
+
+        controls.Gameplay.SlowMove.started += ctx => isFocus = true;
+        controls.Gameplay.SlowMove.canceled += ctx => isFocus = false;
     }
 
     private void OnEnable()
@@ -29,7 +34,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        float currentSpeed = isFocus ? speed * focusMult : speed;
+
         Vector3 move = new Vector3(moveInput.x, moveInput.y, 0f);
-        transform.position += move * speed * Time.deltaTime;
+        transform.position += move * currentSpeed * Time.deltaTime;
+
+        Debug.Log(isFocus);
     }
 }

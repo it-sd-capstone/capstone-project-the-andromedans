@@ -1,5 +1,5 @@
 {
-    "name": "New Controls",
+    "name": "PlayerControls",
     "maps": [
         {
             "name": "Gameplay",
@@ -10,6 +10,15 @@
                     "type": "Value",
                     "id": "d99a4e97-1d8e-4ee4-ace1-1507bc100084",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SlowMove",
+                    "type": "Button",
+                    "id": "521b85ec-da49-440b-a2cb-0536529ac717",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -70,6 +79,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "588ec1fa-7fe8-4898-81e7-bee63f1edcd8",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SlowMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
