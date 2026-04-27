@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
     public float speed = 8f;
+    [SerializeField]
     public float focusMult = 0.5f;
 
     private PlayerControls controls;
@@ -39,6 +41,6 @@ public class PlayerController : MonoBehaviour
         Vector3 move = new Vector3(moveInput.x, moveInput.y, 0f);
         transform.position += move * currentSpeed * Time.deltaTime;
 
-        Debug.Log(isFocus);
+        //Debug.Log(isFocus);
     }
 }
