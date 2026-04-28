@@ -31,7 +31,7 @@ public class TargetLockEnemyFirePattern : MonoBehaviour
 
         if (rb != null)
         {
-            rb.velocity = direction * speed;
+            rb.linearVelocity = direction * speed;
         }
     }
 }
