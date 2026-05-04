@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 8810069132546800831}
   - component: {fileID: 9013185600472615658}
   - component: {fileID: 6722555608019546023}
+  - component: {fileID: 2237903865312583013}
+  - component: {fileID: 4699406520821139335}
   m_Layer: 0
   m_Name: ShotgunEnemy
   m_TagString: Untagged
@@ -159,3 +161,28 @@ MonoBehaviour:
   player: {fileID: 0}
   delay: 0.8
   movementSpeed: 5
+--- !u!114 &2237903865312583013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188485083824088297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabd26cea5b0b6d4f8aef52df20aa3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyKill
+--- !u!114 &4699406520821139335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188485083824088297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfaf894d26b701849be52b19348b59d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyType
+  enemyType: 3

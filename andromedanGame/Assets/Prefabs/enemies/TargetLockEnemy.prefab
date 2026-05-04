@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8115654001076346720}
   - component: {fileID: 5600350903096202288}
   - component: {fileID: 36064989348882053}
+  - component: {fileID: 5446721033734313606}
+  - component: {fileID: 4846082824557525023}
   m_Layer: 0
   m_Name: TargetLockEnemy
   m_TagString: Untagged
@@ -127,6 +129,31 @@ MonoBehaviour:
   frequency: 1
   amplitude: 2
   distance: 5
+--- !u!114 &5446721033734313606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127524133821992417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabd26cea5b0b6d4f8aef52df20aa3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyKill
+--- !u!114 &4846082824557525023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127524133821992417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfaf894d26b701849be52b19348b59d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyType
+  enemyType: 1
 --- !u!1 &2362834662851317350
 GameObject:
   m_ObjectHideFlags: 0

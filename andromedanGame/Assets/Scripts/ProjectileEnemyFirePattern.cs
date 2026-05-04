@@ -33,4 +33,9 @@ public class ProjectileEnemyFirePattern : MonoBehaviour
 
         projectile.SetActive(true);
     }
+
+    public void Init(ObjectPool pool)
+    {
+        projectilePool = pool;
+    }
 }

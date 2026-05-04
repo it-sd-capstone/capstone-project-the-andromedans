@@ -44,6 +44,8 @@ GameObject:
   - component: {fileID: 6216388874262395775}
   - component: {fileID: 4881060196918260099}
   - component: {fileID: 2504747214476223286}
+  - component: {fileID: 8194651178021196841}
+  - component: {fileID: 9082843000787968945}
   m_Layer: 0
   m_Name: ProjectileEnemy
   m_TagString: Untagged
@@ -173,3 +175,28 @@ MonoBehaviour:
   targetY: 3
   maxLeft: -5
   maxRight: 5
+--- !u!114 &8194651178021196841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4985576832027349016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabd26cea5b0b6d4f8aef52df20aa3e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyKill
+--- !u!114 &9082843000787968945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4985576832027349016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfaf894d26b701849be52b19348b59d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyType
+  enemyType: 0
