@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 7102863936845102450}
   - component: {fileID: 2644716961402045313}
   - component: {fileID: 4700775202896363638}
-  - component: {fileID: 1637714755019474284}
   - component: {fileID: 6591633039245056279}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,20 +107,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyProjectile
   speed: 12
   despawnTime: 5.5
---- !u!114 &1637714755019474284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108885146663477773}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21c982975eb70834a889e1c15345e1cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 12
-  despawnTime: 5.5
 --- !u!50 &6591633039245056279
 Rigidbody2D:
   serializedVersion: 5
@@ -137,7 +122,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

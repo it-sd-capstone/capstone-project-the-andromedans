@@ -26,6 +26,7 @@ public class EnemyProjectile : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.down * speed * Time.deltaTime);
+        Debug.Log(gameObject.name + " moving");
     }
 
     /*

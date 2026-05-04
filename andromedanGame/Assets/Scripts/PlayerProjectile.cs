@@ -26,6 +26,7 @@ public class PlayerProjectile : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.up * speed * Time.deltaTime);
+        Debug.Log(gameObject.name + " moving");
     }
 
     /*

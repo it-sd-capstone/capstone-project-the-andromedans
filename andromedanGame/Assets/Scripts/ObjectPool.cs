@@ -29,6 +29,7 @@ public class ObjectPool : MonoBehaviour
 
             if (!newObj.activeInHierarchy)
             {
+                newObj.SetActive(true);
                 return newObj;
             }
         }

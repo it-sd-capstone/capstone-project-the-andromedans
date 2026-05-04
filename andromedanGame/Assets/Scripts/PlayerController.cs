@@ -33,8 +33,9 @@ public class PlayerController : MonoBehaviour
         controls.Gameplay.SlowMove.canceled += ctx => isFocus = false;
 
         //Firing
-        controls.Gameplay.Fire.started += ctx => isFire = true;
+        controls.Gameplay.Fire.performed += ctx => isFire = true;
         controls.Gameplay.Fire.canceled += ctx => isFire = false;
+        controls.Gameplay.Fire.performed += ctx => Debug.Log("Fire pressed");
     }
 
     private void OnEnable()
@@ -79,5 +80,6 @@ public class PlayerController : MonoBehaviour
 
         GameObject bullet = bulletPool.GetObject();
         bullet.transform.position = firePoint.position;
+        bullet.transform.rotation = Quaternion.identity;
     }
 }
