@@ -26,7 +26,21 @@ public class EnemyProjectile : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.down * speed * Time.deltaTime);
-        Debug.Log(gameObject.name + " moving");
+        //Debug.Log(gameObject.name + " moving");
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player hit");
+
+            // Damage the enemy
+            other.GetComponent<PlayerHealth>()?.TakeDamage(1);
+
+            // Disable projectile
+            gameObject.SetActive(false);
+        }
     }
 
     /*
