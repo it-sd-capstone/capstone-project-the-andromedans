@@ -29,13 +29,12 @@ public class ObjectPool : MonoBehaviour
 
             if (!newObj.activeInHierarchy)
             {
-                newObj.SetActive(true);
                 return newObj;
             }
         }
 
         GameObject secondObj = Instantiate(prefab);
-        secondObj.SetActive(true);
+        secondObj.SetActive(false);
         pool.Add(secondObj);
         return secondObj;
     }

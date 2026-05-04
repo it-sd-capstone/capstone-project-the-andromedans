@@ -14,11 +14,12 @@ public class ProjectileEnemyFirePattern : MonoBehaviour
 
     private void Start()
     {
-        Invoke(nameof(Fire), delay);
+        InvokeRepeating(nameof(Fire), delay, delay);
     }
 
     void Fire()
     {
+        //Debug.Log("Fired");
         GameObject projectile = projectilePool.GetObject();
         projectile.transform.position = launchpoint.position;
         projectile.transform.rotation = Quaternion.identity;
@@ -29,5 +30,7 @@ public class ProjectileEnemyFirePattern : MonoBehaviour
         {
             rb.linearVelocity = Vector2.down * speed;
         }
+
+        projectile.SetActive(true);
     }
 }

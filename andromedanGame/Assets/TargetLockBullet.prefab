@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7102863936845102450}
   - component: {fileID: 2644716961402045313}
+  - component: {fileID: 5959348603795368941}
   - component: {fileID: 4700775202896363638}
   - component: {fileID: 1637714755019474284}
   - component: {fileID: 6591633039245056279}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: TargetLockBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +86,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.17007834, g: 0.9245283, b: 0.82999074, a: 1}
+  m_Color: {r: 0.16862746, g: 0.9254902, b: 0.83137256, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -94,7 +95,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &4700775202896363638
+--- !u!114 &5959348603795368941
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,10 +104,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 108885146663477773}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c37f12830365548ad585291f2aa7ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TargetLockProjectile
+  speed: 8
+  despawnTime: 5.5
+--- !u!114 &4700775202896363638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108885146663477773}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 938fe71a9a954f1439371d04abb1b15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyProjectile
-  speed: 12
+  speed: 8
   despawnTime: 5.5
 --- !u!114 &1637714755019474284
 MonoBehaviour:

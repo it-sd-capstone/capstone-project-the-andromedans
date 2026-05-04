@@ -25,13 +25,19 @@ public class TargetLockEnemyFirePattern : MonoBehaviour
         GameObject projectile = pool.GetObject();
         projectile.transform.position = launchpoint.position;
         projectile.transform.rotation = Quaternion.identity;
-        Vector2 direction = (player.position - launchpoint.position).normalized;
+        Vector2 direction = ((Vector2)player.position - (Vector2)launchpoint.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        projectile.transform.rotation = Quaternion.Euler(0f, 0f, angle + 90f);
 
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        
+        projectile.SetActive(true);
 
         if (rb != null)
         {
             rb.linearVelocity = direction * speed;
         }
+
+        
     }
 }

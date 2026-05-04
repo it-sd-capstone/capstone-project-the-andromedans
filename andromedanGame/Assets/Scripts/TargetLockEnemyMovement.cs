@@ -9,20 +9,22 @@ public class TargetLockEnemyMovement : MonoBehaviour
     [SerializeField]
     public float frequency = 2f;
     [SerializeField]
-    public float amplitude = 2f;
-    private float startX;
+    public float amplitude = 1f;
+    [SerializeField]
+    public float distance = 5f;
+
+    private Vector3 startPosition;
+    private float direction = 1f;
 
     private void Start()
     {
-        startX = transform.position.x;
+        startPosition = transform.position;
     }
 
     private void Update()
     {
-        transform.position += Vector3.down * speed * Time.deltaTime;
-        
-        float newX = startX + Mathf.Sin(Time.time * frequency) * amplitude;
-
-        transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+        float horizontalOffset = Mathf.PingPong(Time.time * speed, distance * 2) - distance;
+        float verticalOffset = Mathf.Sin(Time.time * frequency) * amplitude;
+        transform.position = startPosition + new Vector3(horizontalOffset, verticalOffset, 0f);
     }
 }
