@@ -28,6 +28,20 @@ public class TargetLockProjectile : MonoBehaviour
         //transform.Translate(Vector3.down * speed * Time.deltaTime);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player hit");
+
+            // Damage the enemy
+            other.GetComponent<PlayerHealth>()?.TakeDamage(1);
+
+            // Disable projectile
+            gameObject.SetActive(false);
+        }
+    }
+
     /*
     private void OnBecameInvisible()
     {
