@@ -309,7 +309,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   health: 20
-  invincibilityDuration: 1
 --- !u!1 &239436645
 GameObject:
   m_ObjectHideFlags: 0
