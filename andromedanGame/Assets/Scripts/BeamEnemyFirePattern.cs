@@ -61,8 +61,11 @@ public class BeamEnemyFirePattern : MonoBehaviour
         {
             end = hit.point;
 
-            // For later use: player damage logic goes here
-            // TBD Week 5 after team discussion
+            if (hit.collider.CompareTag("Player"))
+            {
+                Debug.Log("Player hit");
+                hit.collider.GetComponent<PlayerHealth>()?.TakeDamage(2);
+            }
         }
 
         lineRenderer.SetPosition(0, start);

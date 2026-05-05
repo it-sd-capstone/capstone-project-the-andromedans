@@ -108,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12
   despawnTime: 5.5
+  hitEffectPrefab: {fileID: 4174752151025856963, guid: e71988e10d890254fbe804363acd7ff4, type: 3}
 --- !u!50 &6591633039245056279
 Rigidbody2D:
   serializedVersion: 5

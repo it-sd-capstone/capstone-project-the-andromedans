@@ -6,6 +6,7 @@ public class PlayerProjectile : MonoBehaviour
 {
     public float speed = 12f;
     public float despawnTime = 5.5f;
+    public GameObject hitEffectPrefab;
 
     private void OnEnable()
     {
@@ -38,8 +39,20 @@ public class PlayerProjectile : MonoBehaviour
             // Damage the enemy
             other.GetComponent<EnemyHealth>()?.TakeDamage(1);
 
+            SpawnHitEffect(transform.position);
+
+            FindFirstObjectByType<ScreenShake>().Shake(0.15f, 0.15f);
+
             // Disable projectile
             gameObject.SetActive(false);
+        }
+    }
+
+    private void SpawnHitEffect(Vector3 position)
+    {
+        if (hitEffectPrefab != null)
+        {
+            Instantiate(hitEffectPrefab, position, Quaternion.identity);
         }
     }
 

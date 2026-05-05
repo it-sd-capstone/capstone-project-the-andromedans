@@ -35,7 +35,7 @@ public class EnemyProjectile : MonoBehaviour
         {
             Debug.Log("Player hit");
 
-            // Damage the enemy
+            // Damage the player
             other.GetComponent<PlayerHealth>()?.TakeDamage(1);
 
             // Disable projectile
