@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   health: 8
+  scoreValue: 2500
 --- !u!114 &5988122639338785663
 MonoBehaviour:
   m_ObjectHideFlags: 0

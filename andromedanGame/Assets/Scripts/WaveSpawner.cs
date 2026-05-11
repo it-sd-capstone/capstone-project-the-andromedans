@@ -16,6 +16,7 @@ public class WaveSpawner : MonoBehaviour
     public ObjectPool targetLockPool;
     public ObjectPool bulletPool;
     public ObjectPool rocketPool;
+    public ScoreManager scoreManager;
 
     public GameObject bossPrefab;
     public Transform bossSpawnPoint;

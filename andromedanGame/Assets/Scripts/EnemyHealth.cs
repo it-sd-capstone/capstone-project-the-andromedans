@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyHealth : MonoBehaviour
 {
     public int health = 1;
+    public int scoreValue = 100;
 
     public void TakeDamage(int damage)
     {
@@ -16,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+        ScoreManager.Instance.AddScore(scoreValue);
         Destroy(gameObject);
     }
 }
