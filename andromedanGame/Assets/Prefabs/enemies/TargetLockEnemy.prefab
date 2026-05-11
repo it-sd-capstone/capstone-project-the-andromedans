@@ -130,7 +130,9 @@ MonoBehaviour:
   speed: 2
   frequency: 3
   amplitude: 1.5
-  distance: 4
+  distance: 1.4
+  verticalSpeed: 3
+  targetY: 2.9
 --- !u!114 &5446721033734313606
 MonoBehaviour:
   m_ObjectHideFlags: 0
