@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        FindFirstObjectByType<ScreenShake>().Shake(0.3f, 0.05f);
         Debug.Log("Player health: " + health);
 
         if (health <= 0)
