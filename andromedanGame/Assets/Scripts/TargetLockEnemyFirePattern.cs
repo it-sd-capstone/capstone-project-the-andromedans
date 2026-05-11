@@ -17,10 +17,10 @@ public class TargetLockEnemyFirePattern : MonoBehaviour
 
     private void TargetLockFire()
     {
-        if (player == null)
+        /*if (player == null)
         {
             return;
-        }
+        }*/
 
         GameObject projectile = pool.GetObject();
         projectile.transform.position = launchpoint.position;
