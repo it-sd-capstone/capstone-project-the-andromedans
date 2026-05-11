@@ -630,7 +630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &492700156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,37 +1064,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970744170}
   m_CullTransparentMesh: 1
---- !u!1 &984369585
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 984369586}
-  m_Layer: 0
-  m_Name: BossSpawnpoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &984369586
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984369585}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.94084, y: 1.07925, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1169676139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,6 +1113,7 @@ MonoBehaviour:
   - {fileID: 1127524133821992417, guid: 95d201886b7dd8c449b21d7017035633, type: 3}
   - {fileID: 806674784135646729, guid: 53a33579cc1d8b1479af1740b93fcde1, type: 3}
   - {fileID: 9188485083824088297, guid: 278533a2548a0eb4f827c9e7f424858b, type: 3}
+  - {fileID: 4985576832027349016, guid: 6cb309e5670e3b9448a7fab3f5923bcf, type: 3}
   spawnpoints:
   - {fileID: 2097076640}
   - {fileID: 493698634}
@@ -1154,8 +1124,7 @@ MonoBehaviour:
   player: {fileID: 18086644}
   targetLockPool: {fileID: 2057189413}
   bulletPool: {fileID: 1680551491}
-  bossPrefab: {fileID: 803397698859151322, guid: 5d86bfab20da01e4991ae0548206116d, type: 3}
-  bossSpawnPoint: {fileID: 984369586}
+  rocketPool: {fileID: 1191492943}
 --- !u!1001 &1184295940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1321,6 +1290,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d7b410ee8a686845ad9e9ee5b5d2ba1, type: 3}
+--- !u!1 &1191492942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1191492944}
+  - component: {fileID: 1191492943}
+  m_Layer: 0
+  m_Name: RocketPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1191492943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191492942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c125040c2ad77414fb98fcac5c8c5790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 108885146663477773, guid: 4fd9b79ebd98528428b0dd0e28293bc4, type: 3}
+  poolAmount: 30
+--- !u!4 &1191492944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191492942}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2189059, y: 0.7958456, z: 0.009450087}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1241362120
 GameObject:
   m_ObjectHideFlags: 0
@@ -2128,6 +2143,7 @@ SceneRoots:
   - {fileID: 1566394827}
   - {fileID: 1680551492}
   - {fileID: 2057189414}
+  - {fileID: 1191492944}
   - {fileID: 413448082}
   - {fileID: 492700159}
   - {fileID: 1169676140}
@@ -2135,4 +2151,3 @@ SceneRoots:
   - {fileID: 493698634}
   - {fileID: 1322789813}
   - {fileID: 1506221738}
-  - {fileID: 984369586}

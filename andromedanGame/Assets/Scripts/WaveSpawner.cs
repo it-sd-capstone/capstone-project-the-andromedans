@@ -15,6 +15,7 @@ public class WaveSpawner : MonoBehaviour
     public Transform player;
     public ObjectPool targetLockPool;
     public ObjectPool bulletPool;
+    public ObjectPool rocketPool;
 
     public GameObject bossPrefab;
     public Transform bossSpawnPoint;
@@ -120,6 +121,11 @@ public class WaveSpawner : MonoBehaviour
 
             ShotgunEnemyMovement shotgunEnemyMovement = enemy.GetComponent<ShotgunEnemyMovement>();
             shotgunEnemyMovement.player = player;
+        }
+        else if (enemyTypeHolder.enemyType == EnemyType.EnemyTypeSelect.Rocket)
+        {
+            RocketEnemyFirePattern rocketEnemyFirePattern = enemy.GetComponent<RocketEnemyFirePattern>();
+            rocketEnemyFirePattern.projectilePool = rocketPool;
         }
 
         activeEnemies.Add(enemy);
