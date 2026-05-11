@@ -7,7 +7,8 @@ public class EnemyType : MonoBehaviour
         Projectile,
         TargetLock,
         Beam,
-        Shotgun
+        Shotgun,
+        Rocket
     }
     public EnemyTypeSelect enemyType;
 }
