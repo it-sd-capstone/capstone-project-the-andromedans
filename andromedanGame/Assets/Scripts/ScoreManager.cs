@@ -4,7 +4,13 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    private float score;
+    private float score = 0;
+    public static ScoreManager Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Update()
     {
@@ -12,5 +18,10 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = "Score: " + Mathf.FloorToInt(score);
 
         //Debug.Log(scoreText.text);
+    }
+
+    public void AddScore(int value)
+    {
+        score += value;
     }
 }

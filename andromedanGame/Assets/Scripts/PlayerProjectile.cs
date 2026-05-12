@@ -41,8 +41,6 @@ public class PlayerProjectile : MonoBehaviour
 
             SpawnHitEffect(transform.position);
 
-            FindFirstObjectByType<ScreenShake>().Shake(0.15f, 0.15f);
-
             // Disable projectile
             gameObject.SetActive(false);
         }

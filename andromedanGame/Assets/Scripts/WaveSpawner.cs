@@ -16,6 +16,12 @@ public class WaveSpawner : MonoBehaviour
     public ObjectPool targetLockPool;
     public ObjectPool bulletPool;
     public ObjectPool rocketPool;
+    public ScoreManager scoreManager;
+
+    public GameObject bossPrefab;
+    public Transform bossSpawnPoint;
+
+    private bool bossSpawned = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,8 +36,19 @@ public class WaveSpawner : MonoBehaviour
         while (true)
         {
             currentWave++;
+            if (currentWave == 4 && !bossSpawned)
+            {
+                bossSpawned = true;
+
+                yield return StartCoroutine(SpawnBoss());
+
+                continue;
+            }
+
             int enemyCount = enemyNum + currentWave;
             yield return StartCoroutine(SpawnWave(enemyCount));
+
+            yield return new WaitUntil(() => activeEnemies.Count == 0);
 
             yield return new WaitForSeconds(waveDelay);
         }
@@ -44,6 +61,32 @@ public class WaveSpawner : MonoBehaviour
             SpawnEnemy();
             yield return new WaitForSeconds(spawnDelay);
         }
+    }
+
+    IEnumerator SpawnBoss()
+    {
+        yield return new WaitForSeconds(2f);
+
+        GameObject boss =
+            Instantiate(
+                bossPrefab,
+                bossSpawnPoint.position,
+                Quaternion.identity
+            );
+
+        Boss1FirePattern bossFire = boss.GetComponent<Boss1FirePattern>();
+
+        if (bossFire != null)
+        {
+            bossFire.player = player;
+            bossFire.shotgunPool = bulletPool;
+            bossFire.homingPool = targetLockPool;
+        }
+        activeEnemies.Add(boss);
+
+        boss.GetComponent<EnemyKill>().Init(this);
+
+        yield return new WaitUntil(() => !activeEnemies.Contains(boss));
     }
 
     void SpawnEnemy()
