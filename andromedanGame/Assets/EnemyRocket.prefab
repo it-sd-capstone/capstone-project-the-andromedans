@@ -129,7 +129,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 64
-  explosionPrefab: {fileID: 2333296397224912372, guid: d9a6d9eef5f807c41af054c5d96dffa7, type: 3}
+  explosionPrefab: {fileID: 7135483295657348663, guid: 77a35b607643c4843928c5ecdc0127a7, type: 3}
 --- !u!50 &6591633039245056279
 Rigidbody2D:
   serializedVersion: 5
