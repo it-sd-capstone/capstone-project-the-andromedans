@@ -6,16 +6,24 @@ public class ExplosionEffect : MonoBehaviour
     public float maxScale = 2f;
     //public SpriteRenderer renderer;
     private float timer;
+    public AudioClip explosion;
+    private AudioSource audioSource;
 
     void Awake()
     {
         //renderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnEnable()
     {
         timer = 0f;
         transform.localScale = Vector3.zero;
+
+        if (explosion != null )
+        {
+            audioSource.PlayOneShot(explosion);
+        }
     }
 
     void Update()

@@ -8,11 +8,15 @@ public class ObjectPool : MonoBehaviour
 
     [SerializeField]
     public int poolAmount = 30;
+    public AudioClip firingSound;
+    private AudioSource audioSource;
     private List<GameObject> pool;
 
     private void Awake()
     {
         pool = new List<GameObject>();
+
+        audioSource = GetComponent<AudioSource>();
 
         for (int i = 0; i < poolAmount; i++)
         {
@@ -30,6 +34,12 @@ public class ObjectPool : MonoBehaviour
             if (!newObj.activeInHierarchy)
             {
                 newObj.SetActive(true);
+
+                if (firingSound != null)
+                {
+                    audioSource.PlayOneShot(firingSound, 0.3f);
+                }
+
                 return newObj;
             }
         }

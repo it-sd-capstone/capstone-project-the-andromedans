@@ -21,12 +21,16 @@ public class WaveSpawner : MonoBehaviour
     public GameObject bossPrefab;
     public Transform bossSpawnPoint;
 
+    public AudioClip explosionSound;
+    private AudioSource audioSource;
+
     private bool bossSpawned = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(WaveLoop());
+        audioSource = GetComponent<AudioSource>();
     }
 
     IEnumerator WaveLoop()
@@ -137,6 +141,10 @@ public class WaveSpawner : MonoBehaviour
     public void EnemyDeath(GameObject enemy)
     {
         activeEnemies.Remove(enemy);
+        if (explosionSound != null)
+        {
+            audioSource.PlayOneShot(explosionSound);
+        }
     }
 
 }

@@ -16,8 +16,11 @@ public class BeamEnemyFirePattern : MonoBehaviour
     private float damageTimer;
     public Transform launchpoint;
     public LayerMask mask;
+    public AudioClip laserSound;
+    private AudioSource audioSource;
     private LineRenderer lineRenderer;
     private bool firing = false;
+    private bool soundPlayed = false;
 
     private void Awake()
     {
@@ -28,6 +31,7 @@ public class BeamEnemyFirePattern : MonoBehaviour
     private void Start()
     {
         StartCoroutine(FireRoutine());
+        audioSource = GetComponent<AudioSource>();
     }
 
     System.Collections.IEnumerator FireRoutine()
@@ -49,6 +53,7 @@ public class BeamEnemyFirePattern : MonoBehaviour
 
             lineRenderer.enabled = false;
             firing = false;
+            soundPlayed = false;
         }
     }
 
@@ -59,6 +64,12 @@ public class BeamEnemyFirePattern : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(start, Vector2.down, length, mask);
         bool playerHit = false;
+
+        if (laserSound  != null && !soundPlayed)
+        {
+            audioSource.PlayOneShot(laserSound);
+            soundPlayed = true;
+        }
 
 
         if (hit.collider != null)
