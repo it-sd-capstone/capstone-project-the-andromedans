@@ -6,6 +6,7 @@ public class WaveSpawner : MonoBehaviour
 {
     public GameObject[] enemies = new GameObject[4];
     public Transform[] spawnpoints;
+    public GameObject[] powerups;
     public float spawnDelay = 0.5f;
     public float waveDelay = 3f;
     public int enemyNum = 3;
@@ -20,6 +21,11 @@ public class WaveSpawner : MonoBehaviour
 
     public GameObject bossPrefab;
     public Transform bossSpawnPoint;
+
+    public GameObject wingmanPrefab;
+
+    private float minPowerupRange = 0;
+    private float maxPowerupRange = 7f;
 
     public AudioClip explosionSound;
     private AudioSource audioSource;
@@ -63,7 +69,7 @@ public class WaveSpawner : MonoBehaviour
         for (int i = 0; i < enemyCount; i++)
         {
             SpawnEnemy();
-            yield return new WaitForSeconds(spawnDelay);
+            yield return new WaitForSeconds(spawnDelay + Random.Range(0, 1.5f));
         }
     }
 
@@ -140,6 +146,21 @@ public class WaveSpawner : MonoBehaviour
 
     public void EnemyDeath(GameObject enemy)
     {
+        if (powerups != null || powerups.Length != 0)
+        {
+            if (Random.Range(minPowerupRange, maxPowerupRange) <= 1)
+            {
+                GameObject powerup = Instantiate(powerups[Random.Range(0, powerups.Length)], enemy.transform.position, Quaternion.identity);
+                PowerupType powerupTypeHolder = powerup.GetComponent<PowerupType>();
+
+                if (powerupTypeHolder.powerupType == PowerupType.PowerupTypeSelect.Wingman)
+                {
+                    WingmanPowerup wingmanPowerup = powerup.GetComponent<WingmanPowerup>();
+                    wingmanPowerup.wingmanToSpawn = wingmanPrefab;
+                }
+            }
+        }
+
         activeEnemies.Remove(enemy);
         if (explosionSound != null)
         {
