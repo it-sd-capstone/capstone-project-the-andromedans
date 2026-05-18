@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class WaveSpawner : MonoBehaviour
     public float spawnDelay = 0.5f;
     public float waveDelay = 3f;
     public int enemyNum = 3;
+
+    public TextMeshProUGUI waveText;
 
     private int currentWave = 0;
     private List<GameObject> activeEnemies = new List<GameObject>();
@@ -46,11 +49,12 @@ public class WaveSpawner : MonoBehaviour
         while (true)
         {
             currentWave++;
-            if (currentWave == 4 && !bossSpawned)
+            UpdateWaveUI();
+            if (currentWave % 4 == 0)
             {
-                bossSpawned = true;
-
                 yield return StartCoroutine(SpawnBoss());
+
+                yield return new WaitForSeconds(waveDelay);
 
                 continue;
             }
@@ -168,4 +172,11 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
+    void UpdateWaveUI()
+    {
+        if (waveText != null)
+        {
+            waveText.text = "Wave: " + currentWave;
+        }
+    }
 }
